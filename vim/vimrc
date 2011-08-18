@@ -72,12 +72,12 @@ set colorcolumn=+1
 " }}}
 " Status line {{{
 
-set statusline=%F%m%r%h%w
-set statusline+=\ %#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=%=(%{&ff}/%Y)
-set statusline+=\ (line\ %l\/%L,\ col\ %c)
+"jset statusline=%F%m%r%h%w
+"jset statusline+=\ %#warningmsg#
+"jset statusline+=%{SyntasticStatuslineFlag()}
+"jset statusline+=%*
+"jset statusline+=%=(%{&ff}/%Y)
+"jset statusline+=\ (line\ %l\/%L,\ col\ %c)
 
 " }}}
 " Backups {{{
