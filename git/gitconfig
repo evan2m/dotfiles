@@ -1,0 +1,25 @@
+[user]
+	name = Evan
+	email = evan@programmableweb.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[core]
+    excludesfile = ~/.gitignore
+[alias]
+    st = status
+    b = branch
+    ci = commit
+    co = checkout
+    l = log --graph --topo-order --decorate --first-parent
+[pager]
+    color = true
+[status]
+    color = auto
+[diff]
+    renamelimit = 0
+[branch]
+    autosetuprebase = always
+[merge]
+    tool = opendiff
