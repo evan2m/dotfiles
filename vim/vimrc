@@ -35,8 +35,8 @@ set history=1000
 set undofile
 set undoreload=10000
 set cpoptions+=J
-set list
-set listchars=tab:▸\ ,eol:¬
+"set list
+"set listchars=tab:▸\ ,eol:¬
 set shell=/bin/bash
 set lazyredraw
 set wildignore+=*.pyc,.hg,.git
