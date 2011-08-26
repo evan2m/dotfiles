@@ -1,4 +1,4 @@
-" .vimrc
+
 " Author: Evan Muehlhausen <evan@programmableweb.com>
 " Based on:
 " Author: Steve Losh <steve@stevelosh.com>
@@ -28,15 +28,13 @@ set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
-set nonumber
-set norelativenumber
+set number
+"set norelativenumber
 set laststatus=2
 set history=1000
-set undofile
-set undoreload=10000
+"set undofile
+"set undoreload=10000
 set cpoptions+=J
-"set list
-"set listchars=tab:▸\ ,eol:¬
 set shell=/bin/bash
 set lazyredraw
 set wildignore+=*.pyc,.hg,.git
@@ -48,6 +46,10 @@ set fillchars=diff:\
 set ttimeout
 set notimeout
 set nottimeout
+set title
+" Textmate-style invisibles
+"set list
+"set listchars=tab:▸\ ,eol:¬
 
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*" 
@@ -67,7 +69,7 @@ set expandtab
 set wrap
 set textwidth=85
 set formatoptions=qrn1
-set colorcolumn=+1
+"set colorcolumn=+1
 
 " }}}
 " Status line {{{
@@ -82,7 +84,7 @@ set colorcolumn=+1
 " }}}
 " Backups {{{
 
-set undodir=~/.vim/tmp/undo/     " undo files
+"set undodir=~/.vim/tmp/undo/     " undo files
 set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
 set backup                        " enable backups
@@ -138,8 +140,9 @@ map <leader><space> :noh<cr>
 runtime macros/matchit.vim
 map <tab> %
 
-nnoremap Y y$
-nnoremap D d$
+" I prefer the default behavior here
+"nnoremap Y y$
+"nnoremap D d$
 
 " Keep search matches in the middle of the window.
 nnoremap * *zzzv
@@ -198,6 +201,19 @@ noremap <C-k>  <C-w>k
 noremap <C-l>  <C-w>l
 noremap <leader>g <C-w>v
 
+" Firefox-like tab shortcuts
+map <D-S-]> gt
+map <D-S-[> gT
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt                                                                                                                                                                                                                                                               
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+
 " }}}
 
 " }}}
@@ -224,8 +240,7 @@ function! MyFoldText() " {{{
     let onetab = strpart('          ', 0, &tabstop)
     let line = substitute(line, '\t', onetab, 'g')
 
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount)) let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction " }}}
 set foldtext=MyFoldText()
@@ -234,7 +249,7 @@ set foldtext=MyFoldText()
 " Destroy infuriating keys ---------------------------------------------------- {{{
 
 " Fuck you, help key.
-set fuoptions=maxvert,maxhorz
+"set fuoptions=maxvert,maxhorz
 noremap  <F1> :set invfullscreen<CR>
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 
@@ -469,11 +484,6 @@ au FileType help setlocal textwidth=78
 
 nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
 nnoremap <leader>es <C-w>s<C-w>j<C-w>L:e ~/.vim/snippets/<cr>
-nnoremap <leader>eo <C-w>s<C-w>j<C-w>L:e ~/Dropbox/Org<cr>4j
-nnoremap <leader>eh <C-w>s<C-w>j<C-w>L:e ~/.hgrc<cr>
-nnoremap <leader>em <C-w>s<C-w>j<C-w>L:e ~/.mutt/muttrc<cr>
-nnoremap <leader>ez <C-w>s<C-w>j<C-w>L:e ~/lib/dotfiles/zsh<cr>4j
-nnoremap <leader>ek <C-w>s<C-w>j<C-w>L:e ~/lib/dotfiles/keymando/keymandorc.rb<cr>
 
 " }}}
 " Convenience mappings -------------------------------------------------------- {{{
@@ -495,7 +505,7 @@ nnoremap <leader>s :%s//<left>
 nnoremap <leader>D :diffoff!<cr>
 
 " Yankring
-nnoremap <silent> <F6> :YRShow<cr>
+"nnoremap <silent> <F6> :YRShow<cr>
 
 " Formatting, TextMate-style
 nnoremap Q gqip
@@ -589,9 +599,15 @@ onoremap <silent> <Leader>T      :call EasyMotionT(0, 1)<CR>
 nnoremap <leader>G <Plug>(golden_ratio_resize)
 
 " }}}
+" pep8{{{
+    "let g:pep8_map = <F5>
+" }}}
+" tasklist{{{
+    map <leader>td <Plug>TaskList
+" }}}
 " Gundo {{{
 
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F8> :GundoToggle<CR>
 let g:gundo_debug = 1
 let g:gundo_preview_bottom = 1
 
@@ -646,7 +662,7 @@ let ropevim_enable_shortcuts = 0
 let ropevim_guess_project = 1
 let ropevim_global_prefix = '<C-c>p'
 
-source $HOME/.vim/sadness/sadness.vim
+"source $HOME/.vim/sadness/sadness.vim
 
 " }}}
 " Scratch {{{
@@ -905,6 +921,7 @@ if has('gui_running')
     if has("gui_macvim")
         macmenu &File.New\ Tab key=<nop>
         map <leader><leader> <Plug>PeepOpen
+        set transparency=15
     else
         map <leader><leader> :CommandT<cr>
     end
