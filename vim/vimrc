@@ -140,9 +140,9 @@ map <leader><space> :noh<cr>
 runtime macros/matchit.vim
 map <tab> %
 
-" I prefer the default behavior here
-"nnoremap Y y$
-"nnoremap D d$
+" Blank lines without entering insert mode
+nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
+nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
 
 " Keep search matches in the middle of the window.
 nnoremap * *zzzv
