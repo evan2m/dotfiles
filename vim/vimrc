@@ -1,7 +1,7 @@
 
 " Author: Evan Muehlhausen <evan@programmableweb.com>
 " Based on:
-" Author: Steve Losh <steve@stevelosh.com>
+" Original Author: Steve Losh <steve@stevelosh.com>
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 "
 " Preamble -------------------------------------------------------------------- {{{
@@ -29,7 +29,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set number
-"set norelativenumber
 set laststatus=2
 set history=1000
 "set undofile
@@ -109,13 +108,9 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " }}}
 " Useful abbreviations -------------------------------------------------------- {{{
 
-"iabbrev ldis ಠ_ಠ
-"iabbrev sl/ http://stevelosh.com/
-"iabbrev bb/ http://bitbucket.org/
-"iabbrev bbs/ http://bitbucket.org/sjl/
-"iabbrev gh/ http://github.com/
-"iabbrev ghs/ http://github.com/sjl/
-"iabbrev sl@ steve@stevelosh.com
+iabbrev ldis ಠ_ಠ
+iabbrev pw/ http://www.programmableweb.com/
+iabbrev em@ evan@programmableweb.com
 
 " }}}
 " Searching and movement ------------------------------------------------------ {{{
