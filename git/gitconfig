@@ -1,12 +1,12 @@
 [user]
-	name = Evan
+	name = Evan Muehlhausen
 	email = evan@programmableweb.com
 [color]
     diff = auto
     status = auto
     branch = auto
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.cvsignore
 [alias]
     st = status
     b = branch

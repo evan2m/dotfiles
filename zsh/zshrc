@@ -20,6 +20,7 @@ export COMMAND_MODE=unix2003
 export RUBYOPT=rubygems
 
 # Key bindings ------------------------------------------------------
+bindkey -v
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
