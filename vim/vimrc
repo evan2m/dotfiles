@@ -596,6 +596,7 @@ nnoremap <leader>G <Plug>(golden_ratio_resize)
 " }}}
 " pep8{{{
     "let g:pep8_map = <F5>
+    let g:pep8_map='<leader>8'
 " }}}
 " tasklist{{{
     map <leader>td <Plug>TaskList
@@ -912,14 +913,7 @@ if has('gui_running')
     set go-=r
     set go-=R
 
-    " PeepOpen on OS X, Command-T elsewhere.
-    if has("gui_macvim")
-        macmenu &File.New\ Tab key=<nop>
-        map <leader><leader> <Plug>PeepOpen
-        set transparency=15
-    else
-        map <leader><leader> :CommandT<cr>
-    end
+    map <leader><leader> :CommandT<cr>
 
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 
