@@ -45,10 +45,10 @@
 	url = https://github.com/vim-scripts/The-NERD-tree.git
 [submodule "vim/bundle/ropevim"]
 	path = vim/bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
+	url = https://github.com/klen/rope-vim.git
 [submodule "vim/bundle/sparkup"]
 	path = vim/bundle/sparkup
-	url = https://github.com/rstacruz/sparkup.git
+	url = https://github.com/kogakure/vim-sparkup.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -64,3 +64,6 @@
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = git://github.com/uggedal/puppet-vim.git

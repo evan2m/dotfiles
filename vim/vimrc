@@ -31,8 +31,8 @@ set backspace=indent,eol,start
 set number
 set laststatus=2
 set history=1000
-"set undofile
-"set undoreload=10000
+set undofile
+set undoreload=10000
 set cpoptions+=J
 set shell=/bin/bash
 set lazyredraw
@@ -83,7 +83,7 @@ set formatoptions=qrn1
 " }}}
 " Backups {{{
 
-"set undodir=~/.vim/tmp/undo/     " undo files
+set undodir=~/.vim/tmp/undo/     " undo files
 set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
 set backup                        " enable backups
@@ -571,6 +571,7 @@ nmap <Leader>x <Plug>ToggleAutoCloseMappings
 " Command-T {{{
 
 let g:CommandTMaxHeight = 20
+map <leader><leader> :CommandT<cr>
 
 " }}}
 " Easymotion {{{
@@ -603,7 +604,7 @@ nnoremap <leader>G <Plug>(golden_ratio_resize)
 " }}}
 " Gundo {{{
 
-nnoremap <F8> :GundoToggle<CR>
+nnoremap <F7> :GundoToggle<CR>
 let g:gundo_debug = 1
 let g:gundo_preview_bottom = 1
 
@@ -849,7 +850,6 @@ onoremap <silent> al" :<C-U>normal! F"va"<cr>
 " Quickreturn ----------------------------------------------------------------- {{{
 
 inoremap <c-cr> <esc>A<cr>
-inoremap <s-cr> <esc>A:<cr>
 
 " }}}
 " Error toggles --------------------------------------------------------------- {{{
@@ -905,6 +905,7 @@ nnoremap <leader>hd :HgDiff<cr>
 
 if has('gui_running')
     set guifont=Menlo:h12
+    set transparency=15
 
     " Remove all the UI cruft
     set go-=T
@@ -913,7 +914,6 @@ if has('gui_running')
     set go-=r
     set go-=R
 
-    map <leader><leader> :CommandT<cr>
 
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 
@@ -947,9 +947,6 @@ if has('gui_running')
 
     imap <M-BS>         <C-w>
     inoremap <D-BS>     <esc>my0c`y
-else
-    " Command-T if we don't have a GUI.
-    map <leader><leader> :CommandT<cr>
 endif
 
 " }}}
