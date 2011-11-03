@@ -43,12 +43,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "vim/bundle/ropevim"]
-	path = vim/bundle/ropevim
-	url = https://github.com/klen/rope-vim.git
-[submodule "vim/bundle/sparkup"]
-	path = vim/bundle/sparkup
-	url = https://github.com/kogakure/vim-sparkup.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -67,3 +61,15 @@
 [submodule "vim/bundle/puppet"]
 	path = vim/bundle/puppet
 	url = git://github.com/uggedal/puppet-vim.git
+[submodule "vim/bundle/rails"]
+	path = vim/bundle/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/ruby"]
+	path = vim/bundle/ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/scss"]
+	path = vim/bundle/scss
+	url = https://github.com/cakebaker/scss-syntax.vim
+[submodule "zsh/z"]
+	path = zsh/z
+	url = git://github.com/rupa/z.git

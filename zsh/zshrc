@@ -33,3 +33,9 @@ alias free="free -m"                          # Show memory usage in megabytes
 alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'egg'" # Show pythonpath
 alias tm='tmux -u2'
 alias c='clear'
+
+# "Z" ------------------------------------------------------
+. $HOME/lib/z.sh
+function precmd () {
+  _z --add "$(pwd -P)"
+}
