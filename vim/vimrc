@@ -214,7 +214,7 @@ map <D-9> 9gt
 " }}}
 " Folding --------------------------------------------------------------------- {{{
 
-set foldlevelstart=0
+set foldlevelstart=20
 
 " Space to toggle folds.
 nnoremap <Space> za
@@ -435,7 +435,6 @@ au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
 au BufNewFile,BufRead .pentadactylrc set filetype=pentadactyl
 
 " }}}
-" Puppet {{{
 
 au Filetype puppet setlocal foldmethod=marker
 au Filetype puppet setlocal foldmarker={,}

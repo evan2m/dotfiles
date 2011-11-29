@@ -73,3 +73,6 @@
 [submodule "zsh/z"]
 	path = zsh/z
 	url = git://github.com/rupa/z.git
+[submodule "vim/bundle/vim-sparkup"]
+	path = vim/bundle/vim-sparkup
+	url = https://github.com/kogakure/vim-sparkup.git
