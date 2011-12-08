@@ -17,6 +17,8 @@
     color = true
 [status]
     color = auto
+    showUntrackedFiles = no
+
 [diff]
     renamelimit = 0
 [branch]
