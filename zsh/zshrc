@@ -39,3 +39,5 @@ alias c='clear'
 function precmd () {
   _z --add "$(pwd -P)"
 }
+# "T" ------------------------------------------------------
+alias t='python $HOME/lib/t/t.py --task-dir ~/tasks --list tasks'
