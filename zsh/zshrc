@@ -2,7 +2,7 @@ export ZSH="$HOME/lib/oh-my-zsh"
 export ZSH_THEME="candy"
 export DISABLE_AUTO_UPDATE="true"
 export OH_MY_ZSH_DEBUG="true"
-plugins=(command-coloring git django pip debian redis-cli vagrant)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh 
 
@@ -39,5 +39,5 @@ alias c='clear'
 function precmd () {
   _z --add "$(pwd -P)"
 }
-# "T" ------------------------------------------------------
+#NAS  "T" ------------------------------------------------------
 alias t='python $HOME/lib/t/t.py --task-dir ~/tasks --list tasks'

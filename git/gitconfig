@@ -23,3 +23,5 @@
     autosetuprebase = always
 [merge]
     tool = opendiff
+[push]
+    default=tracking
