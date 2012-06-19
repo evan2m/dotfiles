@@ -1,0 +1,72 @@
+"1.0rc1
+
+loadplugins '\.(js|penta)$'
+group user
+
+" Gmail hotkeys
+set passkeys=mail.google.com:jkroae<CR>,gi
+
+" Steve Losh goodies
+highlight Hint       font-size: 14px; background: rgba(210,1,133,0.8) !important; border: 2px solid rgb(165,1,105); padding: 4px; border-radius: 3px; font-weight: bold; margin-left: -25px; color: white; font-family: Helvetica; line-height:1em;
+highlight HintActive background: rgba(145,197,43,0.8)    !important;
+highlight HintElem   background: rgba(255, 209, 20, 0.7) !important;
+highlight StatusLine -moz-appearance: none !important; font-weight: bold; background: transparent !important; border: 0px !important; min-height: 22px !important; text-shadow: none !important; font: normal 16px/1 'Menlo' !important; padding: 3px 0px 3px 5px !important;
+highlight CmdLine    padding: 1px !important; font: normal 16px 'Menlo' !important;
+highlight CmdOutput  font: normal 14px 'Menlo' !important;
+highlight CompItem   font: normal 14px 'Menlo' !important;
+
+highlight Find   background: #d6c149; color: #000;
+
+set runtimepath=/Users/sjl/.pentadactyl
+set editor='/usr/local/bin/mvim -f +<line> <file>'
+set followhints=1
+set showtabline=multitab
+set showstatuslinks=command
+
+set mapleader=','
+
+" FASTER PLEASE
+nnoremap j 3j
+nnoremap k 3k
+
+" Go to the second input field.
+" Useful for skipping over search fields, etc.
+nnoremap gI 2gi
+
+" I never use marks, but always use quickmarks.
+nnoremap "'" go
+nnoremap '"' gn
+
+" Switch tabs with parens
+nnoremap ) :tn<CR>
+nnoremap ( :tp<CR>
+
+" Finally I can overwrite the stupid fucking Firebug toggling correctly.
+" nnoremap <c-f> <f12>
+" nnoremap <c-g> <s-f12>
+
+" Console toggle
+nnoremap <c-g> <m-a-k><esc>
+inoremap <c-g> <esc><m-a-k><esc>
+
+" Inspect element toggle
+nnoremap <c-s> <m-a-i>
+inoremap <c-s> <esc><m-a-i>
+
+" Shift is hard.
+nnoremap ; :
+
+" YES YES YES REMOVE THE IDIOCY
+nnoremap <bs> <nop>
+
+" Highlight all search matches, not just the first.
+set hlfind
+
+" Clear search highlighting and normal highlighting.
+nnoremap <Leader><space> <esc>:noh<CR>
+
+" Shut up.
+javascript dactyl.beep = function() { return false; }
+
+
+" vim: set ft=pentadactyl:
