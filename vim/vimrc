@@ -1,8 +1,6 @@
 
 " Author: Evan Muehlhausen <evan@programmableweb.com>
-" Based on:
-" Original Author: Steve Losh <steve@stevelosh.com>
-" Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
+" Source: http://github.com/evan2m/dotfiles
 "
 " Preamble -------------------------------------------------------------------- {{{
 
@@ -110,8 +108,8 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 iabbrev ldis ಠ_ಠ
 iabbrev pw/ http://www.programmableweb.com/
-iabbrev em@ evan@programmableweb.com
-
+iabbrev em@ evan@evanmuehlhausen.com
+iabbrev em evanmuehlhausen.com
 " }}}
 " Searching and movement ------------------------------------------------------ {{{
 
@@ -216,8 +214,8 @@ map <D-9> 9gt
 set foldlevelstart=20
 
 " Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+"nnoremap <Space> za
+"vnoremap <Space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -404,10 +402,10 @@ au FileType python setlocal omnifunc=pythoncomplete#Complete
 " }}}
 " ReStructuredText {{{
 
-au Filetype rst nnoremap <buffer> <localleader>1 yypVr=
+au Filetype rst nnoremap <buffer> <localleader>1 yypVr#
 au Filetype rst nnoremap <buffer> <localleader>2 yypVr-
-au Filetype rst nnoremap <buffer> <localleader>3 yypVr~
-au Filetype rst nnoremap <buffer> <localleader>4 yypVr`
+au Filetype rst nnoremap <buffer> <localleader>3 yypVr=
+au Filetype rst nnoremap <buffer> <localleader>4 yypVr~
 
 " }}}
 " Ruby {{{
@@ -415,9 +413,29 @@ au Filetype rst nnoremap <buffer> <localleader>4 yypVr`
 au Filetype ruby setlocal foldmethod=syntax
 
 " }}}
+" R {{{
+"
+vmap <Leader>r <Plug>RDSendSelection
+nmap <Leader>r <Plug>RDSendFile
+
+" }}}
+" Pentadactyl {{{
+
+augroup ft_pentadactyl
+    au!
+    au BufNewFile,BufRead *pentadactylrc set filetype=pentadactyl
+    au BufNewFile,BufRead ~/Library/Caches/TemporaryItems/pentadactyl-*.tmp set nolist wrap linebreak columns=100 colorcolumn=0
+augroup END
+
+" }}}
 " Vagrant {{{
 
 au BufRead,BufNewFile Vagrantfile set ft=ruby
+
+" }}}
+" Puppet-librarian {{{
+
+au BufRead,BufNewFile Puppetfile set ft=ruby
 
 " }}}
 " Vim {{{
@@ -434,6 +452,7 @@ nnoremap <leader>ev <C-w>s<C-w>j<C-w>L:e $MYVIMRC<cr>
 nnoremap <leader>es <C-w>s<C-w>j<C-w>L:e ~/.vim/snippets/<cr>
 
 " }}}
+"
 " Convenience mappings -------------------------------------------------------- {{{
 
 " Clean whitespace
@@ -457,6 +476,7 @@ nnoremap <leader>D :diffoff!<cr>
 
 " Formatting, TextMate-style
 nnoremap Q gqip
+nnoremap QQ vipJ
 
 " Easier linewise reselection
 nnoremap <leader>v V`]
@@ -807,6 +827,7 @@ endf
 command! -nargs=0 HgDiff call s:HgDiff()
 nnoremap <leader>hd :HgDiff<cr>
 
+"
 " }}}
 " MacVim ---------------------------------------------------------------------- {{{
 
