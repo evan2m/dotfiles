@@ -18,7 +18,7 @@ Install (creates symlinks to your home folder)
     $ ./install.sh
 
 Much of the configuration has been copied from [Steve Losh](http://stevelosh.com/)
-and his [dotfiles].
+and his [dotfiles](https://bitbucket.org/sjl/dotfiles/src).
 
 Helpful links
 
