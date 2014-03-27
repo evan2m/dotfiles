@@ -107,7 +107,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " Useful abbreviations -------------------------------------------------------- {{{
 
 iabbrev ldis ಠ_ಠ
-iabbrev pw/ http://www.programmableweb.com/
 iabbrev em@ evan@evanmuehlhausen.com
 iabbrev em evanmuehlhausen.com
 " }}}
@@ -541,10 +540,11 @@ map <leader>a :Ack!
 nmap <Leader>x <Plug>ToggleAutoCloseMappings
 
 " }}}
-" Command-T {{{
+" ctrlp {{{
 
-let g:CommandTMaxHeight = 20
-map <leader><leader> :CommandT<cr>
+map <leader><leader> :CtrlP<cr>
+map <leader>b :CtrlPBuffer<cr>
+map <leader>m :CtrlPMRU<cr>
 
 " }}}
 " Easymotion {{{
@@ -672,6 +672,7 @@ let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: li
 let g:syntastic_jsl_conf = '$HOME/.vim/jsl.conf'
 
 " }}}
+"
 " Text objects ---------------------------------------------------------------- {{{
 
 " Shortcut for [] {{{

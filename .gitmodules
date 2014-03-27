@@ -13,9 +13,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
@@ -67,9 +64,6 @@
 [submodule "zsh/z"]
 	path = zsh/z
 	url = git://github.com/rupa/z.git
-[submodule "vim/bundle/vim-sparkup"]
-	path = vim/bundle/vim-sparkup
-	url = https://github.com/tristen/vim-sparkup.git
 [submodule "vim/bundle/golden-ratio"]
 	path = vim/bundle/golden-ratio
 	url = https://github.com/roman/golden-ratio
@@ -88,3 +82,6 @@
 [submodule "vim/bundle/vimplenote-vim"]
 	path = vim/bundle/vimplenote-vim
 	url = git://github.com/mattn/vimplenote-vim.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
