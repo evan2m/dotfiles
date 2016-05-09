@@ -23,50 +23,53 @@ set followhints=1
 set showtabline=multitab
 set showstatuslinks=command
 
-set mapleader=','
+map , <Leader>
 
 " FASTER PLEASE
-nnoremap j 3j
-nnoremap k 3k
+nmap j 3j
+nmap k 3k
 
 " Go to the second input field.
 " Useful for skipping over search fields, etc.
-nnoremap gI 2gi
+nmap gI 2gi
 
 " I never use marks, but always use quickmarks.
-nnoremap "'" go
-nnoremap '"' gn
+nmap "'" go
+nmap '"' gn
 
 " Switch tabs with parens
-nnoremap ) :tn<CR>
-nnoremap ( :tp<CR>
+nmap ) :tn<CR>
+nmap ( :tp<CR>
 
 " Finally I can overwrite the stupid fucking Firebug toggling correctly.
-" nnoremap <c-f> <f12>
-" nnoremap <c-g> <s-f12>
+" nmap <c-f> <f12>
+" nmap <c-g> <s-f12>
 
 " Console toggle
-nnoremap <c-g> <m-a-k><esc>
-inoremap <c-g> <esc><m-a-k><esc>
+nmap <c-g> <m-a-k><esc>
+imap  <c-g> <esc><m-a-k><esc>
 
 " Inspect element toggle
-nnoremap <c-s> <m-a-i>
-inoremap <c-s> <esc><m-a-i>
+nmap <c-s> <m-a-i>
+imap <c-s> <esc><m-a-i>
 
 " Shift is hard.
-nnoremap ; :
+nmap ; :
 
 " YES YES YES REMOVE THE IDIOCY
-nnoremap <bs> <nop>
+nmap <bs> <nop>
 
 " Highlight all search matches, not just the first.
 set hlfind
 
 " Clear search highlighting and normal highlighting.
-nnoremap <Leader><space> <esc>:noh<CR>
+nmap <Leader><space> <esc>:noh<CR>
 
 " Shut up.
 javascript dactyl.beep = function() { return false; }
+
+" Backspace to go back
+nmap <BS> <esc>:back<CR>
 
 
 " vim: set ft=pentadactyl:

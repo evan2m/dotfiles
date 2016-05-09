@@ -11,10 +11,9 @@ unsetopt promptcr
 
 # Environment variables ------------------------------------------------------
 export EDITOR='vim'
-export PATH=/usr/local/git/bin/:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/local/git/bin/:/opt/local/bin:/opt/local/sbin:$HOME/bin:$PATH
 export GREP_OPTIONS='--color=auto'
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTSIZE=99999
 export HISTCONTROL=erasedups
 export COMMAND_MODE=unix2003
 export RUBYOPT=rubygems
@@ -39,5 +38,5 @@ alias c='clear'
 function precmd () {
   _z --add "$(pwd -P)"
 }
-#NAS  "T" ------------------------------------------------------
+# "T" ------------------------------------------------------
 alias t='python $HOME/lib/t/t.py --task-dir ~/tasks --list tasks'

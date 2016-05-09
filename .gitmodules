@@ -85,3 +85,9 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-ansible-yaml"]
+	path = vim/bundle/vim-ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "vim/bundle/riv.vim"]
+	path = vim/bundle/riv.vim
+	url = https://github.com/Rykka/riv.vim
