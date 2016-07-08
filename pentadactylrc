@@ -4,9 +4,8 @@ loadplugins '\.(js|penta)$'
 group user
 
 " Gmail hotkeys
-set passkeys=mail.google.com:jkroae<CR>,gi
+set passkeys+=mail.google.com:jkroae<CR>,gi
 
-" Steve Losh goodies
 highlight Hint       font-size: 14px; background: rgba(210,1,133,0.8) !important; border: 2px solid rgb(165,1,105); padding: 4px; border-radius: 3px; font-weight: bold; margin-left: -25px; color: white; font-family: Helvetica; line-height:1em;
 highlight HintActive background: rgba(145,197,43,0.8)    !important;
 highlight HintElem   background: rgba(255, 209, 20, 0.7) !important;
@@ -17,17 +16,15 @@ highlight CompItem   font: normal 14px 'Menlo' !important;
 
 highlight Find   background: #d6c149; color: #000;
 
-set runtimepath=/Users/sjl/.pentadactyl
-set editor='/usr/local/bin/mvim -f +<line> <file>'
 set followhints=1
 set showtabline=multitab
 set showstatuslinks=command
 
 map , <Leader>
 
-" FASTER PLEASE
-nmap j 3j
-nmap k 3k
+" Faster scrolling
+nmap -b j 9j
+nmap -b k 9k
 
 " Go to the second input field.
 " Useful for skipping over search fields, etc.
@@ -56,8 +53,8 @@ imap <c-s> <esc><m-a-i>
 " Shift is hard.
 nmap ; :
 
-" YES YES YES REMOVE THE IDIOCY
-nmap <bs> <nop>
+" Disable CMD-F search. Use /
+nmap <M-f> <nop>
 
 " Highlight all search matches, not just the first.
 set hlfind
@@ -70,6 +67,3 @@ javascript dactyl.beep = function() { return false; }
 
 " Backspace to go back
 nmap <BS> <esc>:back<CR>
-
-
-" vim: set ft=pentadactyl:
